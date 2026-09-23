@@ -1,0 +1,12 @@
+{
+  "info": {"name":"Employee Management API","_postman_id":"b4a6e1e5-1b2f-4d9b-8d2f-employeecrud","description":"CRUD API collection for the Employee Management System.","schema":"https://schema.getpostman.com/json/collection/v2.1.0/collection.json"},
+  "variable": [{"key":"baseUrl","value":"http://localhost:5000/api"},{"key":"employeeId","value":"REPLACE_WITH_EMPLOYEE_ID"}],
+  "item": [
+    {"name":"Health Check","request":{"method":"GET","url":{"raw":"{{baseUrl}}/health","host":["{{baseUrl}}"],"path":["health"]}}},
+    {"name":"Create Employee","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\n  \"name\": \"Aarav Sharma\",\n  \"department\": \"Engineering\",\n  \"role\": \"Frontend Developer\",\n  \"salary\": 65000,\n  \"joinDate\": \"2026-01-15\"\n}"},"url":{"raw":"{{baseUrl}}/employees","host":["{{baseUrl}}"],"path":["employees"]}}},
+    {"name":"Get Employees","request":{"method":"GET","url":{"raw":"{{baseUrl}}/employees?search=&sortBy=name&order=asc","host":["{{baseUrl}}"],"path":["employees"],"query":[{"key":"search","value":""},{"key":"sortBy","value":"name"},{"key":"order","value":"asc"}]}}},
+    {"name":"Get Employee By ID","request":{"method":"GET","url":{"raw":"{{baseUrl}}/employees/{{employeeId}}","host":["{{baseUrl}}"],"path":["employees","{{employeeId}}"]}}},
+    {"name":"Update Employee","request":{"method":"PUT","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\n  \"name\": \"Aarav Sharma\",\n  \"department\": \"Product Engineering\",\n  \"role\": \"Senior Frontend Developer\",\n  \"salary\": 75000,\n  \"joinDate\": \"2026-01-15\"\n}"},"url":{"raw":"{{baseUrl}}/employees/{{employeeId}}","host":["{{baseUrl}}"],"path":["employees","{{employeeId}}"]}}},
+    {"name":"Delete Employee","request":{"method":"DELETE","url":{"raw":"{{baseUrl}}/employees/{{employeeId}}","host":["{{baseUrl}}"],"path":["employees","{{employeeId}}"]}}}
+  ]
+}
